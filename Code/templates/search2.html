@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Therapist Finder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../static/styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="../static/styles/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../static/styles/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+input[type="text1"] {
+    width: 200px;
+}
+.testclass {
+    width: 200px;
+}
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 0px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.initiallyHidden { display: none; }
+</style>
+
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="Options2.html">Therapist Finder</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="search2.html">Search Therapist</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="bookedsched.html">Booked Schedule</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="edit2.html">Edit Profile</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+        <section id="search">
+        <div class="container">
+            <div>
+                <div id="test12" class="col-lg-12 text-center">
+                    <h2>Find Therapist!</h2>
+                    <div>
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                            <label>Search Location:</label>
+                             <input type="text" class="form-control" id="location1" placeholder="Location">
+                             <button type="Submit" class="btn btn-success" id="button3" onclick="dualPurpose();">Search</button>
+                        </div>
+                    </div>
+                    <table class="testing" id = "test1">
+
+                    </table>
+                    <div class="container"  >
+                        <div style="display:none;" id="displaybuttons">
+                            <button type="Submit" class="btn btn-success" id="button1">View Appointments</button>
+                            <button type="Submit" class="btn btn-primary" id="button2">Apply Booking</button>
+                        </div>
+                    <div class="col-md-pull-5">
+                        <div id="applybooking" style="display:none;" class="col-lg-8 col-lg-offset-8 text-left column">
+                            <label>Enter Therapist First Name:</label>
+                            <input type="text1" class="form-control" id="firstname" placeholder="First Name">
+                            <label>Enter Therapist Last name:</label>
+                            <input type="text1" class="form-control" id="lastname" placeholder="Last Name">
+                            <label>Your Name:</label>
+                            <input type="text1" class="form-control" id="clientname" placeholder="Your Name">
+                            <label>Date:</label>
+                            <input type="date" class="form-control testclass" id="scheddate" placeholder="Date">
+                            <label>Choose Time:</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="7:30-8:30">7:30-8:30</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="8:30-9:30">8:30-9:30</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="9:30-10:30">9:30-10:30</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="10:30-11:30">10:30-11:30</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="1:00-2:00">1:00-2:00</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="2:00-3:00">2:00-3:00</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="3:00-4:00">3:00-4:00</label>
+                            <label class="radio col-md-offset-1"><input type="radio" name="optradio" value="4:00-5:00">4:00-5:00</label>
+                            <button type="Submit" class="btn btn-success col-md-offset-3" onclick="post_sched();">Apply Booking</button>
+                        </div>
+
+
+                        <div id="viewbooking" style="display:none;" class="column col-lg-12 text-left col-lg-8 col-lg-offset-2">
+                            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                            <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                            <label>Enter Therapist's First Name: </label>
+                            <input type="text1" class="form-control" id="booking_firstname" placeholder="First Name">
+                            <label>Enter Therapist's Last Name:</label>
+                            <input type="text1" class="form-control" id="booking_lastname" placeholder="Last Name">
+                            <label>Enter the date you want to view:</label>
+                            <input type="date" class="form-control testclass" id="booking_date" placeholder="Date">
+                            <button type="Submit" class="btn btn-success col-lg-offset-1" onclick="dualPurpose1();">View</button>
+                            <div id="schedhere" class="testing1">
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+
+
+    <!-- Contact Section -->
+
+
+    <!-- Footer -->
+
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+
+    <!-- jQuery -->
+    <script src="../static/styles/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/styles/js/jQuery-2.1.4.min.js"></script>
+     <script src="../static/styles/js/bootstrap.min.js"></script>
+     <script src="../static/styles/js/app.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/styles/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="../static/styles/js/jqBootstrapValidation.js"></script>
+    <script src="../static/styles/js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/styles/js/freelancer.min.js"></script>
+</body>
+</html>
+
+
+
+
